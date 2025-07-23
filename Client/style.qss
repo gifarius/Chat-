@@ -1,0 +1,79 @@
+/* General window styling */
+QWidget {
+    background-color: #1a1a2e; /* Dark cyberpunk background */
+    color: #e0e0e0; /* Light text for contrast */
+    font-family: 'Consolas', 'Courier New', monospace; /* Monospaced font for tech aesthetic */
+    font-size: 14px;
+}
+
+/* QLineEdit (IP and Port input fields, message input) */
+QLineEdit {
+    background-color: #2a2a4a; /* Slightly lighter dark background */
+    border: 2px solid #00f7ff; /* Neon cyan border */
+    border-radius: 5px;
+    padding: 8px;
+    color: #00f7ff; /* Neon cyan text */
+    selection-background-color: #ff00ff; /* Neon pink selection */
+    selection-color: #ffffff;
+}
+
+QLineEdit:focus {
+    border: 2px solid #ff00ff; /* Neon pink border on focus */
+    box-shadow: 0 0 10px #ff00ff; /* Glow effect */
+}
+
+/* QPushButton (Start and Send buttons) */
+QPushButton {
+    background-color: #3a3a5a; /* Dark button background */
+    border: 2px solid #00ffcc; /* Neon green border */
+    border-radius: 5px;
+    color: #00ffcc; /* Neon green text */
+    padding: 8px;
+    font-weight: bold;
+    transition: all 0.3s ease; /* Smooth hover transition */
+}
+
+QPushButton:hover {
+    background-color: #00ffcc; /* Neon green background on hover */
+    color: #1a1a2e; /* Dark text for contrast */
+    box-shadow: 0 0 15px #00ffcc; /* Neon glow */
+}
+
+QPushButton:pressed {
+    background-color: #ff00ff; /* Neon pink when pressed */
+    border: 2px solid #ff00ff;
+    box-shadow: 0 0 20px #ff00ff;
+}
+
+/* QLabel (Error label and message label) */
+QLabel {
+    background-color: transparent; /* Transparent background */
+    color: #00f7ff; /* Neon cyan text */
+    padding: 5px;
+    font-size: 14px;
+}
+
+QLabel#errorLabel { /* Specific styling for error label */
+    color: #ff0044; /* Neon red for errors */
+    text-shadow: 0 0 5px #ff0044; /* Glow effect for errors */
+}
+
+QLabel[objectName="messageLabel"] { /* Specific styling for messageLabel */
+    background-color: #2a2a4a; /* Dark background for message area */
+    border: 1px solid #ff00ff; /* Neon pink border */
+    border-radius: 5px;
+    padding: 10px;
+    color: #00f7ff; /* Neon cyan text */
+    box-shadow: 0 0 10px #ff00ff; /* Subtle glow */
+}
+
+/* Add a subtle glow animation for labels */
+@keyframes neonGlow {
+    0% { text-shadow: 0 0 5px #00f7ff, 0 0 10px #00f7ff; }
+    50% { text-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff; }
+    100% { text-shadow: 0 0 5px #00f7ff, 0 0 10px #00f7ff; }
+}
+
+QLabel {
+    animation: neonGlow 2s infinite; /* Apply glow animation */
+}
